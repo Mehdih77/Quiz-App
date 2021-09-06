@@ -7,18 +7,18 @@ import { useHistory } from 'react-router';
 
 export default function Home({name, setName, fetchQuestions}) {
 
-    const [categories, setCategories] = useState('');
+    const [category, setCategory] = useState('');
     const [difficulty, setdifficulty] = useState('');
     const [error, setError] = useState(false);
     const history = useHistory();
 
     const handleStartQuiz = () => {
-        if (!categories || !difficulty || !name) {
+        if (!category || !difficulty || !name) {
             setError(true);
             return;
         } else {
             setError(false);
-            fetchQuestions(categories,difficulty);
+            fetchQuestions(category,difficulty);
             history.push('/quiz')
         }
     }
@@ -43,7 +43,8 @@ export default function Home({name, setName, fetchQuestions}) {
                     label='Select Category'
                     variant='outlined'
                     style={{marginBottom: "30px"}}
-                    onChange={(e) => setCategories(e.target.value)}>
+                    value={category}
+                    onChange={(e) => setCategory(e.target.value)}>
                     {Categories.map(catg => (
                         <MenuItem key={catg.category} value={catg.value} >{catg.category}</MenuItem>
                     ))}
@@ -54,6 +55,7 @@ export default function Home({name, setName, fetchQuestions}) {
                     label='Select Difficulty'
                     variant='outlined'
                     style={{marginBottom: "30px"}}
+                    value={difficulty}
                     onChange={(e) => setdifficulty(e.target.value)}>
                         <MenuItem key='Easy' value='easy'>Easy</MenuItem>
                         <MenuItem key='Medium' value='medium'>Medium</MenuItem>
