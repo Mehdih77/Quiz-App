@@ -6,7 +6,6 @@ import { useHistory } from 'react-router';
 
 export default function Questions({
 questions,
-setQuestions,
 options,
 currentQues,
 setCurrentQues,
@@ -37,6 +36,7 @@ correct}) {
         setError(false)
     }
 
+    // go Next question Or Result page
     const handleNextQuestion = () => {
         if (currentQues > 8) {
             history.push('/result');
@@ -48,6 +48,7 @@ correct}) {
         }
     };
 
+    // Quit from quiz
     const handleQuit = () => {
         history.push('/')
     }
@@ -74,6 +75,7 @@ correct}) {
                         </button>
                     ))}
                 </div>
+
                 <div className="controls">
                     <Button
                     variant='contained'
@@ -83,6 +85,7 @@ correct}) {
                     onClick={handleQuit}>
                         Quit
                     </Button>
+
                     <Button
                     variant='contained'
                     color='primary'

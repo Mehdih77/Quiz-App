@@ -1,6 +1,6 @@
 .title {
   text-transform: uppercase;
-  font-size: 8vw;
+  font-size: 5vw;
   font-family: "Montserrat", sans-serif;
   cursor: pointer;
 }
@@ -14,5 +14,5 @@
 .divider {
   margin: 10px;
   width: 100%;
-  background-color: grey;
+  background-color: rgb(63, 61, 86);
 }

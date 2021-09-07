@@ -1,22 +1,24 @@
 .quiz {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .subtitle {
-    font-size: 25px;
-    border: 1px solid black;
-    box-shadow: 4px 4px 2px black;
-    padding: 5px 10px;
-  }
-  
-  .quizInfo {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
-    margin: 10px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.subtitle {
+  font-size: 25px;
+  border: 1px solid rgb(161, 161, 161);
+  border-radius: 79px;
+  background: linear-gradient(145deg, #ffffff, #e6e6e6);
+  box-shadow: 35px 35px 70px #c9c9c9, -35px -35px 70px #ffffff;
+  padding: 10px 15px;
+}
+
+.quizInfo {
+  width: 100%;
+  font-weight: 700;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin: 10px;
+}

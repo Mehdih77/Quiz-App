@@ -32,14 +32,12 @@ export default function Quiz({name,questions,setQuestions,score,setScore}) {
             { questions ? (
                 <>
                 <div className='quizInfo'>
-                    <span>{questions[currentQues].category}</span>
-                    <span>{questions[currentQues].difficulty}</span>
+                    <span>{questions[currentQues].category} / {questions[currentQues].difficulty}</span>
                     <span>Score: {score}</span>
                 </div>
 
                 <Questions
                 questions={questions}
-                setQuestions={setQuestions}
                 options={options}
                 currentQues={currentQues}
                 setCurrentQues={setCurrentQues}

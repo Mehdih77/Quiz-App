@@ -46,7 +46,7 @@ function App() {
                     />
                  </Route>
                  <Route path='/result'>
-                    <Result />
+                    <Result name={name} score={score} />
                  </Route>
                </Switch>
                
