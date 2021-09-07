@@ -1,7 +1,12 @@
+import './Footer.css';
+
 export default function Footer() {
     return (
-        <div style={{textAlign: 'center', marginBottom: '10px' }}>
-            Made by <a href="https://github.com/Mehdih77">Mehdi</a>
-        </div>
+        <footer className='footer'>
+            Made with <i className="fas fa-coffee"></i> by
+            <a rel="noreferrer" target='_blank' href="https://github.com/Mehdih77">
+            Mehdi 
+            </a>
+        </footer>
     )
 }

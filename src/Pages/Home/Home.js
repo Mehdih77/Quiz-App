@@ -13,6 +13,7 @@ export default function Home({name, setName, fetchQuestions}) {
     const history = useHistory();
 
     const handleStartQuiz = () => {
+    // if they ate empty setting ErrorMessage
         if (!category || !difficulty || !name) {
             setError(true);
             return;
@@ -30,7 +31,7 @@ export default function Home({name, setName, fetchQuestions}) {
 
                 <div className='settings__select'>
 
-                {error && <ErrorMessage>Please Fill All The Fields</ErrorMessage>}
+                    {error && <ErrorMessage>Please Fill All The Fields</ErrorMessage>}
                     
                     <TextField
                     style={{marginBottom: "25px"}}
@@ -46,7 +47,9 @@ export default function Home({name, setName, fetchQuestions}) {
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}>
                     {Categories.map(catg => (
-                        <MenuItem key={catg.category} value={catg.value} >{catg.category}</MenuItem>
+                        <MenuItem key={catg.category} value={catg.value} >
+                        {catg.category}
+                        </MenuItem>
                     ))}
                     </TextField>
 

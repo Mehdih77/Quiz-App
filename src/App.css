@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  scrollbar-width: thin; /* Firefox */
+  scrollbar-width: thin;
 }
 
 *::-webkit-scrollbar {
@@ -21,10 +21,8 @@ a {
 .app {
   min-height: 98.5vh;
   border: 8px solid #39445a93;
-  /* background-color: rgb(36, 33, 33); */
   margin: 5px;
   padding: 5px;
-  /* background-image: url('images/ques1.png'); */
 }
 
 .mainImg {
