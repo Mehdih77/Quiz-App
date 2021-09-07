@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import './Questions.css';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
+import { Button } from '@material-ui/core';
+import { useHistory } from 'react-router';
 
 export default function Questions({
 questions,
@@ -14,6 +16,7 @@ correct}) {
         
     const [selected, setSelected] = useState();
     const [error, setError] = useState(false);
+    const history = useHistory();
 
     // for selecting right OR wrong answer
     const handleSelect = (i) => {
@@ -32,6 +35,21 @@ correct}) {
             setScore(score + 1);
         };
         setError(false)
+    }
+
+    const handleNextQuestion = () => {
+        if (currentQues > 8) {
+            history.push('/result');
+        } else if (selected) {
+            setCurrentQues(currentQues + 1);
+            setSelected();
+        } else {
+            setError('Please Select An Option First');
+        }
+    };
+
+    const handleQuit = () => {
+        history.push('/')
     }
 
 
@@ -55,6 +73,24 @@ correct}) {
                             {i}
                         </button>
                     ))}
+                </div>
+                <div className="controls">
+                    <Button
+                    variant='contained'
+                    color='secondary'
+                    size='large'
+                    style={{width: 185}}
+                    onClick={handleQuit}>
+                        Quit
+                    </Button>
+                    <Button
+                    variant='contained'
+                    color='primary'
+                    size='large'
+                    style={{width: 185}}
+                    onClick={handleNextQuestion}>
+                        Next Question
+                    </Button>
                 </div>
             </div>
         </div>
